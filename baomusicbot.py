@@ -153,7 +153,7 @@ class Music(commands.Cog):
                 await ctx.send(embed=self.music_startPlay(self.music_queue[0][0]))
                 self.music_queue.pop(0)
             print("play next")
-            self.vc.play(discord.FFmpegPCMAudio(executable='C:/ffmpeg/bin/ffmpeg.exe', source=m_url, **self.FFMPEG_OPTIONS), after=lambda e: self.bot.loop.create_task(self.play_next(ctx)))
+            self.vc.play(discord.FFmpegPCMAudio(source=m_url, **self.FFMPEG_OPTIONS), after=lambda e: self.bot.loop.create_task(self.play_next(ctx)))
         else:
             self.is_playing = False
             if (ctx.voice_client):
@@ -187,8 +187,7 @@ class Music(commands.Cog):
                     await self.vc.move_to(self.music_queue[0][1])
                 self.music_queue.pop(0)
             print("play music")
-            self.vc.play(discord.FFmpegPCMAudio(executable='C:/ffmpeg/bin/ffmpeg.exe', source=m_url,
-                         **self.FFMPEG_OPTIONS), after=lambda e: self.bot.loop.create_task(self.play_next(ctx)))
+            self.vc.play(discord.FFmpegPCMAudio(source=m_url, **self.FFMPEG_OPTIONS), after=lambda e: self.bot.loop.create_task(self.play_next(ctx)))
         else:
             self.is_playing = False
             if (ctx.voice_client):
