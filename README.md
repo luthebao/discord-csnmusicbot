@@ -1,6 +1,6 @@
 # discord-csnmusicbot
-Discord bot - play music from chiasenhac.vn by BaoLT.
-This bot was made for Cam 🍊 - Please keep the credit when using this code.
+### Discord bot - play music from chiasenhac.vn by BaoLT.
+### This bot was made for Cam 🍊 - Please keep the credit when using this code.
 
 # How to use
 
